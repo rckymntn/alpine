@@ -1,6 +1,6 @@
 /* Dependancies */
 require("dotenv").config();
-const discord = require("discord.js");
+const discord = require("discord.js"); /* Change to require client and server */
 
 /* Discord Token */
 const token = process.env.DISCORD_TOKEN;
