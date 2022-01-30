@@ -1,11 +1,9 @@
-/* Dependancies */
 require("dotenv").config();
-const discord = require("discord.js"); /* Change to require client and server */
+const {Client, Intents} = require("discord.js"); 
 
-/* Discord Token */
 const token = process.env.DISCORD_TOKEN;
 
-const client = new discord.Client({intents: [discord.Intents.FLAGS.GUILDS]});
+const client = new Client({intents: [Intents.FLAGS.GUILDS]});
 
 client.once("ready", () => {
     console.log("ready");
