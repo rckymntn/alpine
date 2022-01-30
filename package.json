@@ -1,5 +1,5 @@
 {
-  "name": "disbjs",
+  "name": "generic-discord-bot",
   "version": "1.0.0",
   "description": "A Discord bot written in JavaScript.",
   "main": "src/main.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rckymntn/disbjs.git"
+    "url": "git+https://github.com/rckymntn/generic-discord-bot.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rckymntn/disbjs/issues"
+    "url": "https://github.com/rckymntn/generic-discord-bot/issues"
   },
-  "homepage": "https://github.com/rckymntn/disbjs#readme",
+  "homepage": "https://github.com/rckymntn/generic-discord-bot#readme",
   "dependencies": {
     "discord.js": "^13.6.0",
     "dotenv": "^14.3.2"
