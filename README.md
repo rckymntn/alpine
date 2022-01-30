@@ -1,6 +1,6 @@
 # Generic Discord Bot
 
-A Discord bot written in JavaScript. Currently working on implementing features from my old Python Discord bot, then I'll start working on new stuff. 
+A general purpose Discord bot written in JavaScript. Currently working on implementing features from my old Python Discord bot, then I'll start working on new stuff. 
 
 ### Usage
 
