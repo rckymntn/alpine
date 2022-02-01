@@ -1,3 +1,10 @@
+/*
+ *  Slash commands need to be registered with the Discord API.
+ *  Here, we're registering commands with a global scope.
+ *  Or, in other words, any guild using the bot can use any command, barring role restrictions.
+ *  This can easily be changed by adding the Guild ID to the API put. 
+ */
+
 require("dotenv").config();
 const fs = require("fs");
 const { REST } = require("@discordjs/rest");
