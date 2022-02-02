@@ -3,6 +3,9 @@
  *  Here, we're registering commands with a global scope.
  *  Or, in other words, any guild using the bot can use any command, barring role restrictions.
  *  This can easily be changed by adding the Guild ID to the API put. 
+ * 
+ *  This needs to be run on first start up and when new command(s) are added. 
+ *  One could also modify script in package.json to run on startup, but could cause non-negligible startup performance issues, if you care. 
  */
 
 require("dotenv").config();
