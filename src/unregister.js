@@ -1,3 +1,7 @@
+/*
+ *  This will unregister (delete) all commands currently registered at the global guild scope. 
+ */
+
 require("dotenv").config();
 
 const { REST } = require("@discordjs/rest");
