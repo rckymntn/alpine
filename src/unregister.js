@@ -1,5 +1,6 @@
 /*
  *  This will unregister (delete) all commands currently registered at the global guild scope. 
+ *  Commands will need to be re-registered to have an effect again. 
  */
 
 require("dotenv").config();
