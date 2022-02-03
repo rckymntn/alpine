@@ -5,10 +5,13 @@
 
 require("dotenv").config();
 
+
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 
+
 const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
+
 
 rest.get(Routes.applicationCommands(process.env.CLIENT_ID)).then(data => {
     const promises = [];
