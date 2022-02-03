@@ -18,6 +18,7 @@ for (const file of commandList) {
 
 client.once("ready", () => {
     console.log("ready");
+    client.user.setPresence("online");
 });
 
 client.on("interactionCreate", async interaction => {
