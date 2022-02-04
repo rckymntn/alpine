@@ -1,3 +1,8 @@
+/*
+ *  Simple command to get familiar with slash commands. 
+ *  Will be deleted later. 
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders");
 
 module.exports = {
