@@ -13,10 +13,12 @@ module.exports = {
         .addStringOption(stringOption => stringOption
             .setName("String option")
             .setDescription("String option description"))
+            .setRequired(true)
 
         .addIntegerOption(integerOption => integerOption
             .setName("Integer option")
             .setDescription("Integer option description"))
+            .setRequired(false)
 
         .addNumberOption(numberOption => numberOption
             .setName("Number option")
@@ -40,7 +42,11 @@ module.exports = {
 
         .addMentionableOption(mentionableOption => mentionableOption
             .setName("Mentionable option")
-            .setDescription("Mentionable option description")),
+            .setDescription("Mentionable option description"))
+            
+        .addSubcommand(subcommand => subcommand
+            .setName("Subcommand name")
+            .setDescription("Subcommand description")),
         
         async execute(interaction) {
             await interaction.reply(`stringOption:      ${stringOption}\n
