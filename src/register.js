@@ -23,8 +23,11 @@ const { Routes } = require("discord-api-types/v9");
 const commands = [];
 const commandList = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
 for (const file of commandList) {
-    const command = require(`./commands/${file}`);
-    commands.push(command.data.toJSON());
+    // Exclude example command
+    if (file != "example.js") {
+        const command = require(`./commands/${file}`);
+        commands.push(command.data.toJSON());
+    }
 }
 
 
