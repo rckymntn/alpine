@@ -7,7 +7,7 @@ A general purpose Discord bot written in JavaScript. Currently working on implem
 ##### As Is
 
 1. Create a `.env` file with your Discord Bot Token and Client ID. See `.env_example`. 
-2. ...
+2. Register slash commands using `node src/register.js`
 99. `npm start` or `node src/main.js`
 
 ##### With Modification
