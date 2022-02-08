@@ -6,7 +6,7 @@
 
 require("dotenv").config();
 const fs = require("fs");
-const {Client, Collection, Intents} = require("discord.js"); 
+const {Client, Collection, Intents, SystemChannelFlags} = require("discord.js"); 
 
 
 /* 
@@ -32,13 +32,13 @@ for (const file of commandList) {
  *  This will run once at startup. 
  */
 client.once("ready", () => {
-    console.log("ready");
+    console.log("Ready.");
     client.user.setPresence("online");
 });
 
 
 /* 
- *  This will run on every "interaction" and execute functions accordingly. 
+ *  This will run on every interaction (slash command) and execute functions accordingly. 
  */
 client.on("interactionCreate", async interaction => {
     if (!interaction.isCommand()) {
@@ -56,6 +56,14 @@ client.on("interactionCreate", async interaction => {
         }
     }
 });
+
+
+/*
+ *  This will run on every message sent in a server. 
+ */
+client.on("message", async message => {
+    console.log(message);
+})
 
 
 client.login(token);
