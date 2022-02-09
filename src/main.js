@@ -6,7 +6,8 @@
 
 require("dotenv").config();
 const fs = require("fs");
-const {Client, Collection, Intents, SystemChannelFlags} = require("discord.js"); 
+const {Client, Collection, Intents} = require("discord.js"); 
+const moderation = require("./moderation");
 
 
 /* 
@@ -52,18 +53,32 @@ client.on("interactionCreate", async interaction => {
             await command.execute(interaction);
         } catch(error) {
             console.log(error);
-            await interaction.reply({ content: "Error.", ephemeral: true});
+            await interaction.reply({content: "Error.", ephemeral: true});
         }
     }
 });
 
 
 /*
- *  This will run on every message sent in a server. 
+ *  This will run on every new message sent in a server. 
  */
-client.on("message", async message => {
-    console.log(message);
-})
+client.on("messageCreate", async message => {
+    if (message.author.bot) {
+        return;
+    }
+    console.log(`Message: ${message.content}`);
+});
+
+
+/*
+ *  This will run on every message update in a server. 
+ */
+client.on("messageUpdate", async message => {
+    if (message.author.bot) {
+        return;
+    }
+    console.log(`Updated message: ${message}`);
+});
 
 
 client.login(token);
