@@ -1,0 +1,3 @@
+function moderation() {
+    return;
+}
