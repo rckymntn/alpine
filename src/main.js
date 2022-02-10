@@ -15,7 +15,7 @@ const moderation = require("./moderation");
  *  const guild = process.env.GUILD_ID; 
  */
 const token = process.env.DISCORD_TOKEN;
-const client = new Client({intents: [Intents.FLAGS.GUILDS]});
+const client = new Client({intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
 
 
 /*
