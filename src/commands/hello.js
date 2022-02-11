@@ -14,6 +14,6 @@ module.exports = {
             .setDescription("Your name")
             .setRequired(true)),
     async execute(interaction) {
-        await interaction.reply(`Hello ${option}`);
+        await interaction.reply(`Hello ${interaction.options.getString("name")}`);
     }
 };
