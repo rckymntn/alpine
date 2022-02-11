@@ -8,14 +8,14 @@ require("dotenv").config();
 const fs = require("fs");
 const {Client, Collection, Intents} = require("discord.js"); 
 const moderation = require("./moderation");
-
+const commandManager = require("./command-manager");
 
 /* 
  *  Declare any guild ids here, if you want to use them. 
  *  const guild = process.env.GUILD_ID; 
  */
 const token = process.env.DISCORD_TOKEN;
-const client = new Client({intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
+const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
 
 
 /*
@@ -34,7 +34,9 @@ for (const file of commandList) {
  */
 client.once("ready", () => {
     console.log("Ready.");
-    client.user.setPresence("online");
+    client.user.setPresence("online");   
+    commandManager.unregister();
+    commandManager.register(); 
 });
 
 
