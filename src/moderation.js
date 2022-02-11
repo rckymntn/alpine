@@ -1,5 +1,3 @@
-function moderation() {
+module.exports.filter = () => {
     return;
 }
-
-module.exports = {moderation};
