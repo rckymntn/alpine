@@ -33,8 +33,8 @@ for (const file of commandList) {
  *  This will run once at startup. 
  */
 client.once("ready", () => {
-    console.log("Ready.");
-    client.user.setPresence("online");   
+    console.log(`${client.user.username} ready`);
+    client.user.setPresence("online");
     commandManager.unregister();
     commandManager.register(); 
 });
@@ -68,7 +68,7 @@ client.on("messageCreate", async message => {
     if (message.author.bot) {
         return;
     }
-    console.log(`Message: ${message.content}`);
+    console.log(`${message.author.username} sent message "${message.content}"`);
 });
 
 
@@ -79,7 +79,18 @@ client.on("messageUpdate", async message => {
     if (message.author.bot) {
         return;
     }
-    console.log(`Updated message: ${message}`);
+    console.log(`${message.author.username} edited message "${message}"`);
+});
+
+
+/*
+ *  This will run on every message delete in a server. 
+ */
+client.on("messageDelete", async message => {
+    if (message.author.bot) {
+        return;
+    }
+    console.log(`${message.author.username} deleted message "${message}"`);
 });
 
 
