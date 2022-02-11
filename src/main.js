@@ -35,7 +35,7 @@ for (const file of commandList) {
 client.once("ready", () => {
     console.log(`${client.user.username} ready`);
     client.user.setPresence("online");
-    commandManager.unregister();
+    //commandManager.unregister();
     commandManager.register(); 
 });
 
@@ -55,7 +55,7 @@ client.on("interactionCreate", async interaction => {
             await command.execute(interaction);
         } catch(error) {
             console.log(error);
-            await interaction.reply({content: "Error.", ephemeral: true});
+            await interaction.reply({content: `Error: ${error}`, ephemeral: true});
         }
     }
 });
