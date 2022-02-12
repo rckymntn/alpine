@@ -41,7 +41,8 @@ client.once("ready", () => {
 
 
 /* 
- *  This will run on every interaction (slash command) and execute functions accordingly. 
+ *  This will run on every interaction (slash command)
+ *  and execute functions accordingly. 
  */
 client.on("interactionCreate", async interaction => {
     if (!interaction.isCommand()) {

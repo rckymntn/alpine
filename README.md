@@ -1,4 +1,4 @@
-# Generic Discord Bot
+# Alpine Discord Bot
 
 A general purpose Discord bot written in JavaScript. Currently working on implementing features from my old Python Discord bot, then I'll start working on new stuff. 
 

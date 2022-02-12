@@ -1,5 +1,5 @@
 {
-  "name": "generic-discord-bot",
+  "name": "alpine",
   "version": "1.0.0",
   "description": "A Discord bot written in JavaScript.",
   "main": "src/main.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rckymntn/generic-discord-bot.git"
+    "url": "git+https://github.com/rckymntn/alpine.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rckymntn/generic-discord-bot/issues"
+    "url": "https://github.com/rckymntn/alpine/issues"
   },
-  "homepage": "https://github.com/rckymntn/generic-discord-bot#readme",
+  "homepage": "https://github.com/rckymntn/alpine#readme",
   "dependencies": {
     "@discordjs/builders": "^0.12.0",
     "@discordjs/rest": "^0.3.0",
