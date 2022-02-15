@@ -1,0 +1,16 @@
+/*
+ *  Responds with some basic information about the bot.
+ */
+
+const { SlashCommandBuilder } = require("@discordjs/builders");
+
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName("help")
+        .setDescription("Replies with some information about the bot.")
+        .setDefaultPermission(true),
+    async execute(interaction) {
+        const bot = interaction.client.user.username;
+        await interaction.reply(`${bot} is a multipurpose Discord bot.`);
+    }
+};
