@@ -10,6 +10,7 @@ const {Client, Collection, Intents} = require("discord.js");
 const moderation = require("./moderation");
 const commandManager = require("./command-manager");
 
+
 /* 
  *  Declare any guild ids here, if you want to use them. 
  *  const guild = process.env.GUILD_ID; 
