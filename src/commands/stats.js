@@ -10,6 +10,6 @@ module.exports = {
         .setDescription("Replies with some server statistics.")
         .setDefaultPermission(true),
     async execute(interaction) {
-        await interaction.reply(`test`);
+        await interaction.reply(`${interaction.guild.name} is home to ${interaction.guild.memberCount} members.`);
     }
 };
