@@ -11,6 +11,6 @@ module.exports = {
         .setDefaultPermission(true),
     async execute(interaction) {
         const bot = interaction.client.user.username;
-        await interaction.reply(`${bot} is a multipurpose Discord bot.`);
+        await interaction.reply(`${bot} is an open source, multipurpose Discord bot written in JavaScript.`);
     }
 };
