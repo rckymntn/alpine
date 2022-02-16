@@ -2,9 +2,11 @@
 
 A general purpose Discord bot written in JavaScript. Currently working on implementing features from my old Python Discord bot, then I'll start working on new stuff. 
 
-### Commands
+### Commands and other Features
 
-1. 
+1. `/help`: Responds with some information about the bot and its usage. 
+2. `/stats`: Responds with some information about the server the command was called in.
+99. `moderation`: 
 
 ### Usage
 
