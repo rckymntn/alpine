@@ -1,3 +1,7 @@
+/* 
+ *  This will run on every interaction (slash command)
+ *  and execute functions accordingly. 
+ */
 module.exports.interactionCreate = (client) => {
     client.on("interactionCreate", async interaction => {
         if (!interaction.isCommand()) {
