@@ -1,3 +1,8 @@
+/*
+ *  ready related listeners
+ */
+
+
 const commandManager = require("../command-manager");
 
 

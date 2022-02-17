@@ -1,3 +1,8 @@
+/*
+ *  interaction related listeners
+ */
+
+
 /* 
  *  This will run on every interaction (slash command)
  *  and execute functions accordingly. 

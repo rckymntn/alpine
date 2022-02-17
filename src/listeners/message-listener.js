@@ -1,4 +1,9 @@
 /*
+ *  message related listeners
+ */
+
+
+/*
  *  This will run on every new message sent in a server. 
  */
 module.exports.messageCreate = (client) => {
