@@ -28,6 +28,7 @@ module.exports.messageUpdate = (client) => {
     });
 }
 
+
 /*
  *  This will run on every message delete in a server. 
  */

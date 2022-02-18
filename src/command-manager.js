@@ -12,6 +12,7 @@
  *  One could also modify script in package.json to run on startup, but could cause non-negligible startup performance issues, if you care. 
  */
 
+
 require("dotenv").config();
 const fs = require("fs");
 const { REST } = require("@discordjs/rest");
