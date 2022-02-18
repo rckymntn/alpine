@@ -13,12 +13,27 @@
  */
 
 require("dotenv").config();
-
-
 const fs = require("fs");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 
+
+/*
+ *  Add commands to the client
+ */
+module.exports.set = (client) => {
+    client.commands = new Collection();
+    const commandList = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
+    for (const file of commandList) {
+        const command = require(`./commands/${file}`);
+        client.commands.set(command.data.name, command);
+    }
+}
+
+
+/*
+ *  Registers slash commands
+ */
 module.exports.register = () => {
     const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
     const commands = [];
@@ -30,6 +45,10 @@ module.exports.register = () => {
     rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands }).then(() => console.log("Registered slash commands."));
 }
 
+
+/*
+ *  Unregisters slash commands
+ */
 module.exports.unregister = () => {
     const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
     rest.get(Routes.applicationCommands(process.env.CLIENT_ID)).then(data => {
