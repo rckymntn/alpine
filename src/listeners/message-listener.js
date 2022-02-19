@@ -11,6 +11,9 @@ module.exports.messageCreate = (client) => {
         if (message.author.bot) {
             return;
         }
+        if (moderation.filter(message)) {
+            message.delete();
+        }
         console.log(`${message.author.username} sent message "${message.content}"`);
     });
 }
@@ -23,6 +26,9 @@ module.exports.messageUpdate = (client) => {
     client.on("messageUpdate", async message => {
         if (message.author.bot) {
             return;
+        }
+        if (moderation.filter(message)) {
+            message.delete();
         }
         console.log(`${message.author.username} edited message "${message}"`);
     });
