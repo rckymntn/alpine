@@ -22,7 +22,7 @@ A general purpose Discord bot written in JavaScript. Currently working on implem
     - `main.js` is the main flow of the application and likely doesn't need to be modified. 
     - `command-manager.js` contains the logic for registering and unregistering slash commands with the Discord API. 
     - `commands` holds all commands as their own `.js` file. To make a new command, add a new command `your-command.js` to `commands` and run `register.js` before `main.js` for it to take effect. 
-    - `listeners` groups event listeners together. For example, all message related listeners are grouped in one file.
+    - `listeners` groups event listeners together. For example, all message related listeners are grouped in one file, `message-listener.js`.
 2. ...
 99. Once you're satisified with your changes and have registered any new or modified commands, run `npm start` or `node src/main.js`. 
 
