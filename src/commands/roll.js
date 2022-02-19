@@ -10,9 +10,9 @@ module.exports = {
             .setDescription("How many faces the dice has")
             .setRequired(true)),
     async execute(interaction) {
-        min = 1;
-        max = interaction.options.getNumber("faces");
-        
-        await interaction.reply(`test`);
+        const min = 1;
+        const max = interaction.options.getNumber("faces");
+        const result = Math.random() * max + min;
+        await interaction.reply(`${result}`);
     }
 };
