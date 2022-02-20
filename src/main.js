@@ -9,6 +9,9 @@ const fs = require("fs");
 const {Client, Collection, Intents} = require("discord.js"); 
 const moderation = require("./moderation");
 const commandManager = require("./command-manager");
+const messageListener = require("./listeners/message-listener");
+const interactionListener = require("./listeners/interaction-listener");
+const readyListener = require("./listeners/ready-listener");
 
 
 /* 
@@ -30,77 +33,15 @@ for (const file of commandList) {
 }
 
 
-/*
- *  This will run once at startup. 
- */
-client.once("ready", () => {
-    console.log(`${client.user.username} ready.`);
-    client.guilds.cache.forEach(guild => console.log(`Serving ${guild.name}.`));
-    client.user.setPresence("online");
-    //commandManager.unregister();
-    commandManager.register(); 
-});
+readyListener.ready(client);
 
 
-/* 
- *  This will run on every interaction (slash command)
- *  and execute functions accordingly. 
- */
-client.on("interactionCreate", async interaction => {
-    if (!interaction.isCommand()) {
-        return;
-    } else {
-        const command = client.commands.get(interaction.commandName);
-        if (!command) {
-            return;
-        }
-        try {
-            await command.execute(interaction);
-        } catch(error) {
-            console.log(error);
-            await interaction.reply({content: `Error: ${error}`, ephemeral: true});
-        }
-    }
-});
+interactionListener.interactionCreate(client);
 
 
-/*
- *  This will run on every new message sent in a server. 
- */
-client.on("messageCreate", async message => {
-    if (message.author.bot) {
-        return;
-    }
-    if (moderation.filter(message)) {
-        message.delete();
-    }
-    console.log(`${message.author.username} sent message "${message.content}"`);
-});
-
-
-/*
- *  This will run on every message update in a server. 
- */
-client.on("messageUpdate", async message => {
-    if (message.author.bot) {
-        return;
-    }
-    if (moderation.filter(message)) {
-        message.delete();
-    }
-    console.log(`${message.author.username} edited message "${message}"`);
-});
-
-
-/*
- *  This will run on every message delete in a server. 
- */
-client.on("messageDelete", async message => {
-    if (message.author.bot) {
-        return;
-    }
-    console.log(`${message.author.username} deleted message "${message}"`);
-});
+messageListener.messageCreate(client);
+messageListener.messageUpdate(client);
+messageListener.messageDelete(client);
 
 
 client.login(token);
