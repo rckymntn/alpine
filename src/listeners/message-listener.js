@@ -3,6 +3,9 @@
  */
 
 
+const moderation = require("../moderation");
+
+
 /*
  *  This will run on every new message sent in a server. 
  */
