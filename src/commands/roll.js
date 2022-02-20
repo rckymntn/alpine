@@ -12,7 +12,7 @@ module.exports = {
     async execute(interaction) {
         const min = 1;
         const max = interaction.options.getNumber("faces");
-        const result = Math.random() * max + min;
+        const result = Math.floor(Math.random() * max + min);
         await interaction.reply(`${result}`);
     }
 };
