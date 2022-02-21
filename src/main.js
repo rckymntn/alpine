@@ -6,7 +6,7 @@
 
 require("dotenv").config();
 const fs = require("fs");
-const {Client, Collection, Intents} = require("discord.js"); 
+const {Client, Intents} = require("discord.js"); 
 const moderation = require("./moderation");
 const commandManager = require("./command-manager");
 const messageListener = require("./listeners/message-listener");
@@ -25,12 +25,7 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 /*
  *  Finds all commands in the commands directory so the bot can execute them.
  */
-client.commands = new Collection();
-const commandList = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
-for (const file of commandList) {
-    const command = require(`./commands/${file}`);
-    client.commands.set(command.data.name, command);
-}
+commandManager.set(client);
 
 
 readyListener.ready(client);
