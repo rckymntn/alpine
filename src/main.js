@@ -5,9 +5,7 @@
 
 
 require("dotenv").config();
-const fs = require("fs");
 const {Client, Intents} = require("discord.js"); 
-const moderation = require("./moderation");
 const commandManager = require("./command-manager");
 const messageListener = require("./listeners/message-listener");
 const interactionListener = require("./listeners/interaction-listener");
