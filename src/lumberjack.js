@@ -1,4 +1,13 @@
 /*
+ *  Several options of event logging:
+ *      - console
+ *      - channel
+ *      - file
+ *      - all
+ */
+
+
+/*
  *  Logs a string to console
  */
 module.exports.consoleLogger = (string, context) => {
