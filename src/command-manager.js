@@ -33,7 +33,7 @@ module.exports.set = (client) => {
 
 
 /*
- *  Registers slash commands
+ *  Registers slash commands with Discord API
  */
 module.exports.register = () => {
     const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
@@ -48,7 +48,7 @@ module.exports.register = () => {
 
 
 /*
- *  Unregisters slash commands
+ *  Unregisters slash commands with Discord API
  */
 module.exports.unregister = () => {
     const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
