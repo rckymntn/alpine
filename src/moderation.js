@@ -16,7 +16,24 @@ module.exports.filter = (message) => {
     return false;
 }
 
+/*
+ *  Converts leetspeak to normal text
+ *  Note that there's some interference with this and sanitize()
+ */
+function deLeet(string) {
+    string.toLowerCase();
+    string.replace("@", "a");
+    string.replace("1", "l");
+    string.replace("3", "e");
+    string.replace("7", "t");
+    string.replace("$", "s");
+    string.replace("!", "i");
+}
 
+
+/*
+ *  Makes a string lowercase and removes all punctuation 
+ */
 function sanitize(string) {
     return string.toLowerCase().replace(/['".,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
 }
