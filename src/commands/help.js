@@ -13,6 +13,7 @@ module.exports = {
         const bot = interaction.client.user.username;
         await interaction.reply(
             `${bot} is an open source, multipurpose Discord bot written in JavaScript. 
+            You can find the source code at https://github.com/rckymntn/alpine. 
             Use slash commands to interact with the bot. 
             For a list of commands, type "/" and navigate to the ${bot} tab.`
         );
