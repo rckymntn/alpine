@@ -6,6 +6,7 @@ A general purpose Discord bot written in JavaScript. Currently working on implem
 
 1. `/help`: Responds with some information about the bot and its usage. 
 2. `/stats`: Responds with some information about the server the command was called in.
+3. `roll x`: Responds with a number between one and x where x is provided by the user
 99. `moderation`: 
 
 ### Usage
@@ -18,9 +19,10 @@ A general purpose Discord bot written in JavaScript. Currently working on implem
 
 ##### With Modification
 
-1. `src` directory is home to `main.js`, `command-manager.js`, `listeners` directory, and the `commands` directory. 
+1. `src` directory is home to `main.js`, `command-manager.js`, `moderation.js`, `listeners` directory, and the `commands` directory. 
     - `main.js` is the main flow of the application and likely doesn't need to be modified. 
     - `command-manager.js` contains the logic for registering and unregistering slash commands with the Discord API. 
+    - `moderation.js` has functions to sanitize text for it to then be scanned for any blocked words contained in `filter.csv`.
     - `commands` holds all commands as their own `.js` file. To make a new command, add a new command `your-command.js` to `commands` and run `register.js` before `main.js` for it to take effect. 
     - `listeners` groups event listeners together. For example, all message related listeners are grouped in one file, `message-listener.js`.
 2. ...
