@@ -49,3 +49,17 @@ module.exports.messageDelete = (client) => {
         console.log(`${message.author.username} deleted message "${message}"`);
     });
 }
+
+
+module.exports.messageReactionAdd = (client) => {
+    client.on("messageReactionAdd", async message => {
+
+    });
+}
+
+
+module.exports.messageReactionRemove = (client) => {
+    client.on("messageReactionRemove", async message => {
+
+    });
+}
