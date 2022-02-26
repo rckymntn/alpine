@@ -7,7 +7,7 @@ A general purpose Discord bot written in JavaScript. Currently working on implem
 1. `/help`: Responds with some information about the bot and its usage. 
 2. `/stats`: Responds with some information about the server the command was called in.
 3. `roll x`: Responds with a number between one and x where x is provided by the user
-99. `moderation`: 
+99. `moderation`: Messages sent that contain a word in `filter.csv` will be deleted. Also contains message sanitization functions. 
 
 ### Usage
 
