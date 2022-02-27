@@ -11,7 +11,7 @@
  *  Logs a string to console
  */
 module.exports.consoleLogger = (string, context) => {
-    const date = new Date();
+    const date = getDate();
 
     console.log(`${date.getTime()}: ${string}`);
 }
@@ -21,7 +21,7 @@ module.exports.consoleLogger = (string, context) => {
  *  Logs a string to a channel
  */
 module.exports.channelLogger = (string, context) => {
-    const date = new Date();
+    const date = getDate();
     // Write log to log channel
 }
 
@@ -30,7 +30,7 @@ module.exports.channelLogger = (string, context) => {
  *  Logs a string to a file
  */
 module.exports.fileLogger = (string, context) => {
-    const date = new Date();
+    const date = getDate();
     // Write log to log file
 }
 
@@ -42,4 +42,13 @@ module.exports.logger = (string, context) => {
     this.consoleLogger(string, context);
     this.channelLogger(string, context);
     this.fileLogger(string, context);
+}
+
+
+/*
+ *  Date formatting used for logging functions
+ */
+function getDate() {
+    const date = new Date();
+    return date;
 }
