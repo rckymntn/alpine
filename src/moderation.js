@@ -22,12 +22,13 @@ module.exports.filter = (message) => {
  */
 function deLeet(string) {
     string.toLowerCase();
-    string.replace("@", "a");
     string.replace("1", "l");
     string.replace("3", "e");
     string.replace("7", "t");
-    string.replace("$", "s");
+    string.replace("9", "g");
     string.replace("!", "i");
+    string.replace("@", "a");  
+    string.replace("$", "s");  
 }
 
 
