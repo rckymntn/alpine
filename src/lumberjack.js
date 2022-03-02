@@ -12,8 +12,7 @@
  */
 module.exports.consoleLogger = (string, context) => {
     const date = getDate();
-
-    console.log(`${date.getTime()}: ${string}`);
+    console.log(`${date} - ${string}`);
 }
 
 
