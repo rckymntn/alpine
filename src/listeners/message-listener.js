@@ -4,6 +4,7 @@
 
 
 const moderation = require("../moderation");
+const lumberjack = require("../lumberjack");
 
 
 /*
@@ -17,7 +18,7 @@ module.exports.messageCreate = (client) => {
         if (moderation.filter(message)) {
             message.delete();
         }
-        console.log(`${message.author.username} sent message "${message.content}"`);
+        lumberjack.consoleLogger(`${message.author.username} sent message "${message.content}"`);
     });
 }
 
@@ -33,7 +34,7 @@ module.exports.messageUpdate = (client) => {
         if (moderation.filter(message)) {
             message.delete();
         }
-        console.log(`${message.author.username} edited message "${message}"`);
+        lumberjack.consoleLogger(`${message.author.username} edited message "${message}"`);
     });
 }
 
@@ -46,7 +47,7 @@ module.exports.messageDelete = (client) => {
         if (message.author.bot) {
             return;
         }
-        console.log(`${message.author.username} deleted message "${message}"`);
+        lumberjack.consoleLogger(`${message.author.username} deleted message "${message}"`);
     });
 }
 
