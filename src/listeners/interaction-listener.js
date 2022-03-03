@@ -20,9 +20,9 @@ module.exports.interactionCreate = (client) => {
                 return;
             }
             try {
-                await command.execute(interaction).then(lumberjack.consoleLogger(`${interaction.user.username} used ${interaction}`));
+                await command.execute(interaction).then(lumberjack.consoleLogger(`${interaction.user.username} used ${interaction} and succeeded`));
             } catch(error) {
-                console.log(error);
+                lumberjack.consoleLogger(`${interaction.user.username} used ${interaction} and failed`)
                 await interaction.reply({content: `Error: ${error}`, ephemeral: true});
             }
         }
