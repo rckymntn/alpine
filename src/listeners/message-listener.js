@@ -18,7 +18,7 @@ module.exports.messageCreate = (client) => {
         if (moderation.filter(message)) {
             message.delete();
         }
-        lumberjack.consoleLogger(`${message.author.username} sent message "${message.content}"`);
+        lumberjack.consoleLogger(`${message.author.username} sent message "${message.content}"`, message);
     });
 }
 
@@ -34,7 +34,7 @@ module.exports.messageUpdate = (client) => {
         if (moderation.filter(message)) {
             message.delete();
         }
-        lumberjack.consoleLogger(`${message.author.username} edited message "${message}"`);
+        lumberjack.consoleLogger(`${message.author.username} edited message "${message}"`, message);
     });
 }
 
@@ -47,7 +47,7 @@ module.exports.messageDelete = (client) => {
         if (message.author.bot) {
             return;
         }
-        lumberjack.consoleLogger(`${message.author.username} deleted message "${message}"`);
+        lumberjack.consoleLogger(`${message.author.username} deleted message "${message}"`, message);
     });
 }
 
