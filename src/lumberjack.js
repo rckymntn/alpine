@@ -12,7 +12,13 @@
  */
 module.exports.consoleLogger = (string, context) => {
     const date = getDate();
-    console.log(`${date} - ${string}`);
+    try {
+        const guildId = context.guild.id;
+        const guildName = context.guild.name;
+        console.log(`${date} - ${guildId} (${guildName}) - ${string}`);
+    } catch {
+        console.log(`${date} - ${string}`);
+    }
 }
 
 
