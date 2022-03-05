@@ -36,7 +36,14 @@ module.exports.channelLogger = (string, context) => {
  */
 module.exports.fileLogger = (string, context) => {
     const date = getDate();
-    // Write log to log file
+    try {
+        const guildId = context.guild.id;
+        const guildName = context.guild.name;
+        // Write to file guildId.log
+    } catch {
+        const guildId = "000000000000000000";
+        // Write to file guildId.log where 000000000000000000.log is for general logging, like startup
+    }
 }
 
 
