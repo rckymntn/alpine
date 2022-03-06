@@ -32,4 +32,4 @@ A general purpose Discord bot written in JavaScript (and eventually TypeScript.)
 
 ### Motivation 
 
-`discord.py` was discontinued the 28th of August 2021, which is what my original Discord bot was written in. Meanwhile, as of writing, `discord.js` is actively maintained and presumably won't be discontinued. Additionally, I had some friends asking about having a feature complete bot to call their own, so I decided to take the parts I liked from my old Python bot and make it more distributable. 
+`discord.py` was discontinued the 28th of August 2021, which is what my original Discord bot was written in. (3/5/2022 update: [discord.py development has resumed](https://gist.github.com/Rapptz/c4324f17a80c94776832430007ad40e6), but I'll continue working with `discord.js`.) Meanwhile, as of writing, `discord.js` is actively maintained and presumably won't be discontinued. Additionally, I had some friends asking about having a feature complete bot to call their own, so I decided to take the parts I liked from my old Python bot and make it more distributable. 
