@@ -9,6 +9,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName("hello")
         .setDescription("Responds hello, name")
+        .setDefaultPermission(true)
         .addStringOption(option => option
             .setName("name")
             .setDescription("Your name")

@@ -8,7 +8,8 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("ping")
-        .setDescription("pong"),
+        .setDescription("pong")
+        .setDefaultPermission(true),
     async execute(interaction) {
         await interaction.reply("pong");
     }
