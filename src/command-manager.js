@@ -31,6 +31,7 @@ module.exports.set = (client) => {
         const command = require(`./commands/${file}`);
         client.commands.set(command.data.name, command);
     }
+    lumberjack.consoleLogger(`Set slash commands`);
 }
 
 
