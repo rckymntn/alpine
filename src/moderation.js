@@ -19,13 +19,18 @@ module.exports.filter = (message) => {
 /*
  *  Converts leetspeak to normal text
  *  Note that there's some interference with this and sanitize()
+ *  All converted to lower case as to work with sanitize()
  */
 function deLeet(string) {
     string.toLowerCase();
     string.replace("1", "l");
     string.replace("3", "e");
+    string.replace("4", "a");
+    string.replace("5", "s");
     string.replace("7", "t");
+    string.replace("8", "b");
     string.replace("9", "g");
+    string.replace("0", "o")
     string.replace("!", "i");
     string.replace("@", "a");  
     string.replace("$", "s");  
