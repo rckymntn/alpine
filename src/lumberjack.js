@@ -27,7 +27,12 @@ module.exports.consoleLogger = (string, context) => {
  */
 module.exports.channelLogger = (string, context) => {
     const date = getDate();
-    // Write log to log channel
+    context.guild.channels.forEach(channel => {
+        if (channel.name == "logs") {
+            console.log(`TRUE`);
+        }
+    });
+    console.log(`FALSE`);
 }
 
 
