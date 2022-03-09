@@ -45,7 +45,7 @@ module.exports.register = () => {
         const command = require(`./commands/${file}`);
         commands.push(command.data.toJSON());
     }
-    rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands }).then(() => lumberjack.consoleLogger("Registered slash commands."));
+    rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands }).then(() => lumberjack.consoleLogger("Registered slash commands"));
 }
 
 
@@ -60,6 +60,6 @@ module.exports.unregister = () => {
             const unregister = `${Routes.applicationCommands(process.env.CLIENT_ID)}/${command.id}`;
             promises.push(rest.delete(unregister));
         }
-        return Promise.all(promises).then(() => lumberjack.consoleLogger("Unregistered slash commands."));
+        return Promise.all(promises).then(() => lumberjack.consoleLogger("Unregistered slash commands"));
     });
 }
