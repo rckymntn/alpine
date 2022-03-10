@@ -29,10 +29,16 @@ module.exports.channelLogger = (string, context) => {
     const date = getDate();
     context.guild.channels.forEach(channel => {
         if (channel.name == "logs") {
-            console.log(`TRUE`);
+            // get channel id
+            // send log to channel
+            // `${date} - ${string}`
+            // guild name or id isn't necessary since it's being sent to a channel in that guild
         }
     });
-    console.log(`FALSE`);
+    // create channel called logs
+    // send log to channel
+    // `${date} - ${string}`
+    // guild name or id isn't necessary since it's being sent to a channel in that guild
 }
 
 
