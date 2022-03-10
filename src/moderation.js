@@ -1,6 +1,8 @@
 const fs = require("fs");
 
-
+/*
+ *  Reads the contents of filter.csv into an array for easy access 
+ */
 const filterArray = fs.readFileSync("./filter.csv", "utf-8").split(",");
 
 
