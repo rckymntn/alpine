@@ -16,3 +16,13 @@ module.exports.guildMemberRemove = (client) => {
         }
     });
 }
+
+
+/*
+ *
+ */
+module.exports.guildBanAdd = (client) => {
+    client.on("guildBanAdd", async ban => {
+        
+    })
+}
