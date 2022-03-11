@@ -2,7 +2,7 @@ const lumberjack = require("../lumberjack");
 
 
 /*
- *  
+ *  Logs when a member leaves a guild either voluntarily or by being kicked
  */
 module.exports.guildMemberRemove = (client) => {
     client.on("guildMemberRemove", async member => {
