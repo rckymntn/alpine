@@ -1,7 +1,8 @@
 const lumberjack = require("../lumberjack");
 
+
 /*
- *
+ *  
  */
 module.exports.guildMemberRemove = (client) => {
     client.on("guildMemberRemove", async member => {
@@ -10,7 +11,7 @@ module.exports.guildMemberRemove = (client) => {
         if (!auditLog) {
             lumberjack.consoleLogger(`${member.user.tag} left ${client.guild.id}`);
         } else if (kickee.id == member.id) {
-            lumberjack.consoleLogger(`${member.user.tag} was kicked from ${client.guild.id} by ${kickee.user.tag}`);
+            lumberjack.consoleLogger(`${member.user.tag} was kicked from ${client.guild.id} by ${kicker.user.tag}`);
         } else {
             lumberjack.consoleLogger(`${member.user.tag} left ${client.guild.id}`);
         }
@@ -23,6 +24,6 @@ module.exports.guildMemberRemove = (client) => {
  */
 module.exports.guildBanAdd = (client) => {
     client.on("guildBanAdd", async ban => {
-        
+
     })
 }
