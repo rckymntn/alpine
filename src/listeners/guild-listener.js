@@ -24,6 +24,14 @@ module.exports.guildMemberRemove = (client) => {
  */
 module.exports.guildBanAdd = (client) => {
     client.on("guildBanAdd", async ban => {
-
-    })
+        const auditLog = await ban.guild.fetchAuditLogs({limit: 1, type: "MEMBER_BAN_ADD"}).entries.first();
+        const {banner, bannee} = auditLog;
+        if (!auditLog) {
+            lumberjack.consoleLogger(`${ban.user.id} was banned from ${ban.guild.name}`);
+        } else if (bannee.id == ban.user.id) {
+            lumberjack.consoleLogger(`${ban.user.id} was banned from ${ban.guild.name} by ${banner.user.tag}`);
+        } else {
+            lumberjack.consoleLogger(`${ban.user.id} was banned from ${ban.guild.name}`);
+        }
+    });
 }
