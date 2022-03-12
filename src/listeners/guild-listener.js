@@ -20,7 +20,7 @@ module.exports.guildMemberRemove = (client) => {
 
 
 /*
- *
+ *  Logs when a member is banned from a guild and by who 
  */
 module.exports.guildBanAdd = (client) => {
     client.on("guildBanAdd", async ban => {
