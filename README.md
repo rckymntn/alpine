@@ -7,6 +7,7 @@ A general purpose Discord bot written in JavaScript (and eventually TypeScript.)
 1. `/help`: Responds with some information about the bot and its usage. 
 2. `/stats`: Responds with some information about the server the command was called in.
 3. `roll x`: Responds with a number between one and x where x is provided by the user.
+97. Command registration and unregistration with Discord API
 98. `logging`: Functionality to log information to console, a file, and a channel.
 99. `moderation`: Messages sent that contain a word in `filter.csv` will be deleted. Also contains message sanitization functions. 
 
