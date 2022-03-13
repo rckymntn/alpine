@@ -10,6 +10,7 @@ const commandManager = require("./command-manager");
 const messageListener = require("./listeners/message-listener");
 const interactionListener = require("./listeners/interaction-listener");
 const readyListener = require("./listeners/ready-listener");
+const guildListener = require("./listeners/guild-listener");
 
 
 /* 
@@ -34,6 +35,8 @@ interactionListener.interactionCreate(client);
 messageListener.messageCreate(client);
 messageListener.messageUpdate(client);
 messageListener.messageDelete(client);
+guildListener.guildMemberRemove(client);
+guildListener.guildBanAdd(client);
 
 
 /*
