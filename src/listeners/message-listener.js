@@ -52,6 +52,9 @@ module.exports.messageDelete = (client) => {
 }
 
 
+/*
+ *  This will run when reactions added to messages
+ */
 module.exports.messageReactionAdd = (client) => {
     client.on("messageReactionAdd", async message => {
 
@@ -59,6 +62,9 @@ module.exports.messageReactionAdd = (client) => {
 }
 
 
+/*
+ *  This will run when reactions are removed from messages 
+ */
 module.exports.messageReactionRemove = (client) => {
     client.on("messageReactionRemove", async message => {
 
