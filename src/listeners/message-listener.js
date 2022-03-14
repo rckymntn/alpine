@@ -77,7 +77,7 @@ module.exports.messageReactionRemove = (client) => {
  *
  */
 function happyBirthday(message) {
-    if (message.toLowerCase().includes("happy birthday")) {
+    if (message.content.toLowerCase().includes("happy birthday")) {
         message.channel.send("Happy birthday!")
     }
 }
