@@ -18,6 +18,7 @@ module.exports.messageCreate = (client) => {
         if (moderation.filter(message)) {
             message.delete();
         }
+        happyBirthday(message);
         lumberjack.consoleLogger(`${message.author.username} sent message "${message.content}"`, message);
     });
 }
@@ -69,4 +70,14 @@ module.exports.messageReactionRemove = (client) => {
     client.on("messageReactionRemove", async message => {
 
     });
+}
+
+
+/*
+ *
+ */
+function happyBirthday(message) {
+    if (message.toLowerCase().includes("happy birthday")) {
+        message.channel.send("Happy birthday!")
+    }
 }
