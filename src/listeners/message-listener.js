@@ -78,6 +78,16 @@ module.exports.messageReactionRemove = (client) => {
  */
 function happyBirthday(message) {
     if (message.content.toLowerCase().includes("happy birthday")) {
-        message.channel.send("Happy birthday!")
+        message.channel.send("Happy birthday!");
+    }
+}
+
+
+/*
+ *
+ */
+function selfAwareness(message) {
+    if (message.content.toLowerCase().includes(message.client.user.username.toLowerCase())) {
+        message.channel.send("");
     }
 }
