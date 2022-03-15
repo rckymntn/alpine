@@ -74,7 +74,7 @@ module.exports.messageReactionRemove = (client) => {
 
 
 /*
- *
+ *  Responds with happy birthday message if "happy birthday" is in a message
  */
 function happyBirthday(message) {
     if (message.content.toLowerCase().includes("happy birthday")) {
@@ -84,7 +84,7 @@ function happyBirthday(message) {
 
 
 /*
- *
+ *  Responds with something if bot name is in a message
  */
 function selfAwareness(message) {
     if (message.content.toLowerCase().includes(message.client.user.username.toLowerCase())) {
