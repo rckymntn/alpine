@@ -32,7 +32,7 @@ function deLeet(string) {
     string.replace("7", "t");
     string.replace("8", "b");
     string.replace("9", "g");
-    string.replace("0", "o")
+    string.replace("0", "o");
     string.replace("!", "i");
     string.replace("@", "a");  
     string.replace("$", "s");  
