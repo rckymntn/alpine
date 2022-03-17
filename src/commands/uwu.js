@@ -15,5 +15,8 @@ module.exports = {
 }
 
 function uwuify(string) {
-    return "";
+    string.toLowerCase();
+    string.replace("l", "w");
+    string.replace("r", "w");
+    return string;
 }
