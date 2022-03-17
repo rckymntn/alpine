@@ -13,3 +13,7 @@ module.exports = {
         await interaction.reply(``);
     }
 }
+
+function uwuify(string) {
+    return "";
+}
