@@ -10,13 +10,13 @@ module.exports = {
             .setDescription("text to uwu-ify")
             .setRequired(true)),
     async execute(interaction) {
-        await interaction.reply(``);
+        await interaction.reply(`${uwuify(interaction.options.getString("text"))}`);
     }
 }
 
 function uwuify(string) {
     string.toLowerCase();
-    string.replace("l", "w");
-    string.replace("r", "w");
+    string = string.replace("l", "w");
+    string = string.replace("r", "w");
     return string;
 }
