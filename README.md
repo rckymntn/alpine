@@ -13,6 +13,8 @@ A general purpose Discord bot written in JavaScript (and eventually TypeScript.)
 
 ### Usage
 
+This is a bot primarily designed for my wants. Anyone is welcome to make use of the code provided here, but there may be some things you want changed or removed. Below I describe the organization of the project to make changes easier. 
+
 ##### As Is
 
 1. Create a `.env` file with your Discord Bot Token and Client ID. See `.env-example`. 
