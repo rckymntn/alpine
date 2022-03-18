@@ -25,17 +25,17 @@ module.exports.filter = (message) => {
  */
 function deLeet(string) {
     string.toLowerCase();
-    string.replace("1", "l");
-    string.replace("3", "e");
-    string.replace("4", "a");
-    string.replace("5", "s");
-    string.replace("7", "t");
-    string.replace("8", "b");
-    string.replace("9", "g");
-    string.replace("0", "o");
-    string.replace("!", "i");
-    string.replace("@", "a");  
-    string.replace("$", "s");  
+    string = string.replace("1", "l");
+    string = string.replace("3", "e");
+    string = string.replace("4", "a");
+    string = string.replace("5", "s");
+    string = string.replace("7", "t");
+    string = string.replace("8", "b");
+    string = string.replace("9", "g");
+    string = string.replace("0", "o");
+    string = string.replace("!", "i");
+    string = string.replace("@", "a");  
+    string = string.replace("$", "s");  
 }
 
 
