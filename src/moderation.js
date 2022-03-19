@@ -25,6 +25,7 @@ module.exports.filter = (message) => {
  */
 function deLeet(string) {
     string.toLowerCase();
+    // There has to be a better way to do this
     string = string.replace("1", "l");
     string = string.replace("3", "e");
     string = string.replace("4", "a");
@@ -43,5 +44,7 @@ function deLeet(string) {
  *  Makes a string lowercase and removes all punctuation 
  */
 function sanitize(string) {
-    return string.toLowerCase().replace(/['".,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+    string.toLowerCase();
+    string = string.replace(/['".,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+    return string;
 }
