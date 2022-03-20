@@ -1,5 +1,8 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 
+/*
+ *  uwuifies text 
+ */
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("uwu")
@@ -14,6 +17,10 @@ module.exports = {
     }
 }
 
+
+/*
+ *  Helper function for uwuifying text
+ */
 function uwuify(string) {
     string.toLowerCase();
     string = string.replace("l", "w");
