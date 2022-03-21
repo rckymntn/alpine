@@ -36,7 +36,8 @@ function deLeet(string) {
     string = string.replace("0", "o");
     string = string.replace("!", "i");
     string = string.replace("@", "a");  
-    string = string.replace("$", "s");  
+    string = string.replace("$", "s");
+    return string;
 }
 
 
