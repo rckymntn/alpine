@@ -19,6 +19,7 @@ module.exports.messageCreate = (client) => {
             message.delete();
         }
         happyBirthday(message);
+        selfAwareness(message);
         lumberjack.consoleLogger(`${message.author.username} sent message "${message.content}"`, message);
     });
 }
