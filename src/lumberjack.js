@@ -56,7 +56,7 @@ module.exports.fileLogger = (string, context) => {
         fs.appendFileSync(`logs/${guildId}.txt`, `${date} - ${guildId} (${guildName}) - ${string}`);
     } catch {
         const guildId = "000000000000000000";
-        // Write to file guildId.log where 000000000000000000.log is for general logging, like startup
+        fs.appendFileSync(`logs/${guildId}.txt`, `${date} - ${string}`);
     }
 }
 
