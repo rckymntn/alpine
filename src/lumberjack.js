@@ -7,6 +7,9 @@
  */
 
 
+const fs = require("fs");
+
+
 /*
  *  Logs a string to console
  */
@@ -50,7 +53,7 @@ module.exports.fileLogger = (string, context) => {
     try {
         const guildId = context.guild.id;
         const guildName = context.guild.name;
-        // Write to file guildId.log
+        fs.appendFileSync(`logs/${guildId}.txt`, `${date} - ${guildId} (${guildName}) - ${string}`);
     } catch {
         const guildId = "000000000000000000";
         // Write to file guildId.log where 000000000000000000.log is for general logging, like startup
