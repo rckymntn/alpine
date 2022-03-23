@@ -54,11 +54,11 @@ module.exports.fileLogger = (string, context) => {
         // Situations where context is known or important (eg, message deletion)
         const guildId = context.guild.id;
         const guildName = context.guild.name;
-        fs.appendFileSync(`logs/${guildId}.log`, `${date} - ${guildId} (${guildName}) - ${string}`);
+        fs.appendFileSync(`logs/${guildId}.log`, `${date} - ${guildId} (${guildName}) - ${string}\n`);
     } catch {
         // Situations where context is unknown or not important (eg, startup)
         const guildId = "000000000000000000";
-        fs.appendFileSync(`logs/${guildId}.log`, `${date} - ${string}`);
+        fs.appendFileSync(`logs/${guildId}.log`, `${date} - ${string}\n`);
     }
 }
 
