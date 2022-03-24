@@ -2,6 +2,7 @@
  *  Tests for lumberjack.js
  */
 
+
 const lumberjack = require("../src/lumberjack");
 
 
