@@ -48,7 +48,7 @@ module.exports.channelLogger = (string, context) => {
 /*
  *  Logs a string to a file
  */
-module.exports.fileLogger = (string, context) => {
+module.exports.fileLogger = (string = "", context) => {
     const date = getDate();
     try {
         // Situations where context is known or important (eg, message deletion)
