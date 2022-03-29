@@ -4,12 +4,18 @@
 
 
 const moderation = require("../src/moderation");
-const testing = require("testing");
 
-function filterTest() {
+
+/*
+ *  Test filter with an empty string
+ */
+function filterEmptyStringTest() {
     const string = "";
     const expected = false;
-    const actual = moderation.filter();
-    result = testing.verify(expected, actual);
-    console.log(`Testing moderation.filter() on ${string}. Expected: ${expected}. Actual: ${actual}.`);
+    const actual = moderation.filter(string);
+    result = expected === actual;
+    console.log(`filterEmptyStringTest - Expected: ${expected} Actual: ${actual}`);
 }
+
+
+filterEmptyStringTest();
