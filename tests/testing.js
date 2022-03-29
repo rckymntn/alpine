@@ -3,6 +3,9 @@
  */
 
 module.exports.verify = (expected, actual) => {
-    result = expected === actual;
-    return result;
+    if (expected === actual) {
+        return ("PASS");
+    } else {
+        return ("FAIL");
+    }
 } 
