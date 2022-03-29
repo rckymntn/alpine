@@ -4,6 +4,7 @@
 
 
 const moderation = require("../src/moderation");
+const testing = require("../tests/testing");
 
 
 /*
@@ -13,12 +14,8 @@ function filterEmptyStringTest() {
     const string = "";
     const expected = false;
     const actual = moderation.filter(string);
-    if (expected === actual) {
-        const result = "PASS";
-    } else {
-        const result = "FAIL";
-    }
-    console.log(`filterEmptyStringTest - ${result} - Expected: ${expected} Actual: ${actual}`);
+    const result = testing.verify(expected, actual);
+    console.log(`${result} - filterEmptyStringTest - Expected: ${expected} Actual: ${actual}`);
 }
 
 /*
@@ -28,12 +25,8 @@ function filterNullStringTest() {
     const string = null;
     const expected = false;
     const actual = moderation.filter(string);
-    if (expected === actual) {
-        const result = "PASS";
-    } else {
-        const result = "FAIL";
-    }
-    console.log(`filterEmptyStringTest - ${result} - Expected: ${expected} Actual: ${actual}`);
+    const result = testing.verify(expected, actual);
+    console.log(`${result} - filterEmptyStringTest - Expected: ${expected} Actual: ${actual}`);
 }
 
 
