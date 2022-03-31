@@ -19,5 +19,7 @@ test("consoleLogger with no string or context", () => {
  *  Get the last line of a file as a string 
  */
 function getLastLine(file) {
-    return;
+    const lines = file.trim().split('\n');
+    const lastLine = lines[lines.length - 1];
+    return lastLine;
 }
