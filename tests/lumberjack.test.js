@@ -4,6 +4,7 @@
 
 
 const lumberjack = require("../src/lumberjack");
+const fs = require("fs");
 
 
 /*
@@ -11,7 +12,9 @@ const lumberjack = require("../src/lumberjack");
  */
 test("consoleLogger with no string or context", () => {
     lumberjack.fileLogger();
-
+    const lastLine = getLastLine(fs.readFileSync("../logs/client"));
+    const expected = "";
+    expected(lastLine).toBe(expected);
 });
 
 
