@@ -8,9 +8,9 @@ const fs = require("fs");
 
 
 /*
- *
+ *  Tests fileLogger when no string or context is provided
  */
-test("consoleLogger with no string or context", () => {
+test("fileLogger with no string or context", () => {
     lumberjack.fileLogger();
     const lastLine = getLastLine(fs.readFileSync("logs/client.log"));
     const date = new Date();
