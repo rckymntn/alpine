@@ -13,7 +13,8 @@ const fs = require("fs");
 test("consoleLogger with no string or context", () => {
     lumberjack.fileLogger();
     const lastLine = getLastLine(fs.readFileSync("logs/client.log"));
-    const expected = "";
+    const date = new Date();
+    const expected = `${date} - `;
     expect(lastLine).toBe(expected);
 });
 
@@ -24,6 +25,6 @@ test("consoleLogger with no string or context", () => {
 function getLastLine(file) {
     file = String(file);
     const lines = file.split('\n');
-    const lastLine = lines[lines.length - 1];
+    const lastLine = lines[lines.length - 2];
     return lastLine;
 }
