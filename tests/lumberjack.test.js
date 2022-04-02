@@ -23,8 +23,13 @@ test("fileLogger with no string or context", () => {
  *  Get the last line of a file as a string 
  */
 function getLastLine(file) {
-    file = String(file);
-    const lines = file.split('\n');
-    const lastLine = lines[lines.length - 2];
-    return lastLine;
+    try {
+        file = String(file);
+        const lines = file.split('\n');
+        const lastLine = lines[lines.length - 2];
+        return lastLine;
+    } catch {
+        console.log(`Could not find last line of ${file}.`)
+        return "";
+    }
 }
