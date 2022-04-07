@@ -23,20 +23,20 @@ module.exports.filter = (message) => {
  *  Note that there's some interference with this and sanitize()
  *  All converted to lower case as to work with sanitize()
  */
-function deLeet(string) {
+module.exports.deLeet = (string) => {
     string.toLowerCase();
     // There has to be a better way to do this
-    string = string.replace("1", "l");
-    string = string.replace("3", "e");
-    string = string.replace("4", "a");
-    string = string.replace("5", "s");
-    string = string.replace("7", "t");
-    string = string.replace("8", "b");
-    string = string.replace("9", "g");
-    string = string.replace("0", "o");
-    string = string.replace("!", "i");
-    string = string.replace("@", "a");  
-    string = string.replace("$", "s");
+    string = string.replace(/1/g, "l");
+    string = string.replace(/3/g, "e");
+    string = string.replace(/4/g, "a");
+    string = string.replace(/5/g, "s");
+    string = string.replace(/7/g, "t");
+    string = string.replace(/8/g, "b");
+    string = string.replace(/9/g, "g");
+    string = string.replace(/0/g, "o");
+    string = string.replace(/!/g, "i");
+    string = string.replace(/@/g, "a");  
+    string = string.replace(/\$/g, "s");
     return string;
 }
 
