@@ -32,6 +32,7 @@ This is a bot primarily designed for my wants. Anyone is welcome to make use of 
     - `lumberjack.js` contains functions to log to console, a guild channel, a file, or all three. 
     - `commands` holds all commands as their own `.js` file. To make a new command, add a new command `your-command.js` to `commands` and run `register.js` before `main.js` for it to take effect. There's an example commmand in `examples/example.js` demonstrating most basic functionality of building a slash command. 
     - `listeners` directory groups event listeners together. For example, all message related listeners are grouped in one file, `message-listener.js`.
+    - `tests` directory holds all tests for different files. 
 2. ...
 99. Once you're satisified with your changes and have registered any new or modified commands, run `npm start` or `node src/main.js`. 
 
