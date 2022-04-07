@@ -55,7 +55,7 @@ test("filter with one random non-permitted term", () => {
 
 
 /*
- *
+ *  Pick a random word from filter, obfuscate it, and then test it with filter
  */
 test("filter with one random obfuscated non-permitted term", () => {
     const filterArray = fs.readFileSync("./filter.csv", "utf-8").split(",");
