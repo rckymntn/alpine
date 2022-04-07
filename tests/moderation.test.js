@@ -64,3 +64,23 @@ test("filter with one random obfuscated non-permitted term", () => {
     const string = `The quick brown fox ${randWordObfuscated} over the lazy dog`;
     expect(moderation.filter(string)).toBe(true);
 });
+
+
+/*
+ *  Simple deLeet test
+ */
+test("deLeet 1337", () => {
+    const phrase = "1337";
+    const expected = "leet";
+    expect(moderation.deLeet(phrase)).toBe(expected);
+});
+
+
+/*
+ *  Test deLeet where all characters are unique and to be replaced
+ */
+test("deLeet all characters", () => {
+    const phrase = "13457890!@$";
+    const expected = "leastbgoias";
+    expect(moderation.deLeet(phrase)).toBe(expected);
+})
