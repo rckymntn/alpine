@@ -20,6 +20,18 @@ test("fileLogger with no string or context", () => {
 
 
 /*
+ *  Test fileLogger with string provided 
+ */
+test("fileLogger with string but no context", () => {
+    lumberjack.fileLogger("string, but no context test");
+    const lastLine = getLastLine(fs.readFileSync("logs/client.log"));
+    const date = new Date();
+    const expected = `${date} - string, but no context test`;
+    expect(lastLine).toBe(expected);
+})
+
+
+/*
  *  Get the last line of a file as a string 
  */
 function getLastLine(file) {
