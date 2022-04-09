@@ -84,3 +84,13 @@ test("deLeet all characters", () => {
     const expected = "leastbgoias";
     expect(moderation.deLeet(phrase)).toBe(expected);
 })
+
+
+/*
+ *  Test deLeet where some characters need to be replaced and some don't
+ */
+test("Test deLeet with mixed characters", () => {
+    const phrase = "13457hello890!@$";
+    const expected = "leasthellobgoias";
+    expect(moderation.deLeet(phrase)).toBe(expected);
+})
