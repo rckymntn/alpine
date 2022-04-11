@@ -104,3 +104,13 @@ test("Test deLeet with empty string", () => {
     const expected = "";
     expect(moderation.deLeet(phrase)).toBe(expected);
 });
+
+
+/*
+ *  Test deLeet with null string
+ */
+test("Test deLeet with null string", () => {
+    const phrase = null;
+    const expected = "";
+    expect(moderation.deLeet(phrase)).toBe(expected);
+})
