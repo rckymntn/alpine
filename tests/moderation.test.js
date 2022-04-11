@@ -94,3 +94,13 @@ test("Test deLeet with mixed characters", () => {
     const expected = "leasthellobgoias";
     expect(moderation.deLeet(phrase)).toBe(expected);
 })
+
+
+/*
+ * Test deLeet with empty string
+ */
+test("Test deLeet with empty string", () => {
+    const phrase = "";
+    const expected = "";
+    expect(moderation.deLeet(phrase)).toBe(expected);
+});
