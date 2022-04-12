@@ -24,6 +24,9 @@ module.exports.filter = (message) => {
  *  All converted to lower case as to work with sanitize()
  */
 module.exports.deLeet = (string) => {
+    if (string == null) {
+        return "";
+    }
     string.toLowerCase();
     // There has to be a better way to do this
     string = string.replace(/1/g, "l");
