@@ -3,7 +3,7 @@ const fs = require("fs");
 /*
  *  Reads the contents of filter.csv into an array for easy access 
  */
-const filterArray = fs.readFileSync("./filter.csv", "utf-8").split(",");
+const filterArray = csvToArray("./filter.csv");
 
 
 /*
@@ -51,4 +51,17 @@ function sanitize(string) {
     string.toLowerCase();
     string = string.replace(/['".,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
     return string;
+}
+
+
+/*
+ *  Takes a csv file as an argument and returns its elements as an array
+ */
+function csvToArray(file) {
+    try {
+        const array = fs.readFileSync(file, "utf-8").split(",");
+        return array;
+    } catch {
+        return [];
+    }
 }
