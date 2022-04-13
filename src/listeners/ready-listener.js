@@ -15,7 +15,7 @@ module.exports.ready = (client) => {
         lumberjack.consoleLogger(`${client.user.username} ready`);
         client.guilds.cache.forEach(guild => lumberjack.consoleLogger(`Online in ${guild.name}`));
         client.user.setPresence("online");
-        //commandManager.unregister();
+        commandManager.unregister();
         commandManager.register(); 
     });
 }
