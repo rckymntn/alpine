@@ -26,6 +26,7 @@ module.exports.consoleLogger = (string, context) => {
 
 
 /*
+ *  TODO
  *  Logs a string to a channel
  */
 module.exports.channelLogger = (string, context) => {
