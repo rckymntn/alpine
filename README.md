@@ -32,13 +32,13 @@ This is a bot primarily designed for my wants. Anyone is welcome to make use of 
     - `lumberjack.js` contains functions to log to console, a guild channel, a file, or all three. 
     - `commands` holds all commands as their own `.js` file. To make a new command, add a new command `your-command.js` to `commands` and run `register.js` before `main.js` for it to take effect. There's an example commmand in `examples/example.js` demonstrating most basic functionality of building a slash command. 
     - `listeners` directory groups event listeners together. For example, all message related listeners are grouped in one file, `message-listener.js`.
-    - `tests` directory holds all tests for different files. 
+    - `tests` directory holds all tests for different files. Test files share the same filename as the file they test, for example `filename.test.js` tests `filename.js`. 
 2. ...
 99. Once you're satisified with your changes and have registered any new or modified commands, run `npm start` or `node src/main.js`. 
 
 ### Testing
 
-Tests are made using Jest and are stored in the `tests` directory. Some things, like slash commands, are difficult to test, so they mostly rely on manual testing. Use `npm test` to run the existing tests or any you may add.
+Tests are made using Jest and are stored in the `tests` directory. Tests share the same file name as what they test, but with a `.test` appended before the `.js`. Some things, like slash commands, are difficult to test, so they mostly rely on manual testing. Use `npm test` to run the existing tests or any you may add.
 
 ### Motivation 
 
