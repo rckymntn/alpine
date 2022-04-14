@@ -28,7 +28,19 @@ test("fileLogger with string but no context", () => {
     const date = new Date();
     const expected = `${date} - string, but no context test`;
     expect(lastLine).toBe(expected);
-})
+});
+
+
+/*
+ *  Test fileLogger with an integer provided as a string
+ */
+test("fileLogger with integer as string", () => {
+    lumberjack.fileLogger(1);
+    const lastLine = getLastLine(fs.readFileSync("logs/client.log"));
+    const date = new Date();
+    const expected = `${date} - 1`;
+    expect(lastLine).toBe(expected);
+});
 
 
 /*
