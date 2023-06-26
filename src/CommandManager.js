@@ -1,6 +1,6 @@
-import * as Discord from "discord.js";
-import config from "../config.json" assert { type: "json" };
+import Discord from "discord.js";
 import fs from "fs";
+import config from "../config.json" assert { type: "json" };
 
 export default class CommandManager {
     constructor(client) {
@@ -8,15 +8,17 @@ export default class CommandManager {
         this.commandsPath = "./src/commands/";
         this.commandFiles = fs.readdirSync(this.commandsPath).filter(file => file.endsWith(".js"));
         this.rest = new Discord.REST().setToken(config.token);
+
     }
 
+    // Set commands to the client attribute
     async set() {
         for (let file of this.commandFiles) {
             await import(`./commands/ping.js`).then((command) => {
                 command = command.default;
                 if ("data" in command && "execute" in command) {
-                    console.log(`Command ${command.data.name} set.`)
                     this.client.commands.set(command.data.name, command);
+                    console.log(`Command ${command.data.name} set.`);
                 }
             }).catch((error) => {
                 console.log(error);
@@ -24,6 +26,7 @@ export default class CommandManager {
         }
     }
 
+    // Register commands with Discord
     async register() {
         let commands = [];
         for (let file of this.commandFiles) {
@@ -34,9 +37,9 @@ export default class CommandManager {
                 console.log(error);
             });
         }
-        this.rest.put(Discord.Routes.applicationCommands(config.clientId), {
+        await this.rest.put(Discord.Routes.applicationCommands(config.clientId), {
             body: commands
-        })
+        });
     }
 }
 
