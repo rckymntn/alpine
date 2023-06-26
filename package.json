@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/rckymntn/alpine#readme",
   "dependencies": {
-    "discord.js": "^13.6.0"
+    "discord.js": "^14.11.0"
   },
   "devDependencies": {
     "eslint": "^8.43.0"
