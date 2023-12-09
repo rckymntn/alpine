@@ -9,7 +9,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName("ping")
         .setDescription("pong")
-        .setDefaultPermission(true),
+        .setDefaultMemberPermission(true),
     async execute(interaction) {
         await interaction.reply("pong");
     }

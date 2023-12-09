@@ -1,45 +1,49 @@
-/*
- *  This is the main part of the bot.
- *  Startup and on interaction events are handled here.
- */
+import Discord from "discord.js";
+import CommandManager from "./commandManager.js";
+import ModerationManager from "./ModerationManager.js";
+import config from "../config.json" assert { type: "json" };
+
+const client = new Discord.Client({intents: [Discord.GatewayIntentBits.Guilds]});
+const commandManager = new CommandManager(client);
+const moderationManager = new ModerationManager();
+
+// Initialize the client commands collection attribute BEFORE setting / registering any commands in CommandManager
+client.commands = new Discord.Collection();
+
+client.once(Discord.Events.ClientReady, (client) => {
+    console.log(`Logged in as ${client.user.tag}.`);
+    commandManager.set().then(commandManager.register());
+});
 
 
-require("dotenv").config();
-const {Client, Intents} = require("discord.js"); 
-const commandManager = require("./command-manager");
-const messageListener = require("./listeners/message-listener");
-const interactionListener = require("./listeners/interaction-listener");
-const readyListener = require("./listeners/ready-listener");
-const guildListener = require("./listeners/guild-listener");
+// Moderation 
+if (config.moderation) {
+    import("./ModerationManager.js").then(() => {
+        client.on(Discord.Events.GuildMemberAdd, (added) => {
+            if (moderationManager.isPreemptivelyBanned(added)) {
+                added.ban();
+            }
+        });
+        client.on(Discord.Events.MessageCreate, (message) => {
+            if (moderationManager.screen(message)) {
+                message.delete();
+            }
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
+}
 
+// Commands
+client.on(Discord.Events.InteractionCreate, async (interaction) => {
+    if (!interaction.isChatInputCommand()) {
+        return;
+    }
+    let command = interaction.client.commands.get(interaction.commandName);
+    if (!command) {
+        return;
+    }
+    await command.execute(interaction);
+})
 
-/* 
- *  Declare any guild ids here, if you want to use them
- *  const guild = process.env.GUILD_ID; 
- */
-const token = process.env.DISCORD_TOKEN;
-const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
-
-
-/*
- *  Finds all commands in the commands directory so the bot can execute them
- */
-commandManager.set(client);
-
-
-/*
- *  Listeners
- */
-readyListener.ready(client);
-interactionListener.interactionCreate(client);
-messageListener.messageCreate(client);
-messageListener.messageUpdate(client);
-messageListener.messageDelete(client);
-guildListener.guildMemberRemove(client);
-guildListener.guildBanAdd(client);
-
-
-/*
- *  NOTHING BELOW THIS
- */
-client.login(token);
+client.login(process.env.DISCORD_TOKEN);
