@@ -8,6 +8,6 @@ export default class ModerationManager {
 	}
 
 	screen(message) {
-		return false;
+        return false;
 	}
 }
