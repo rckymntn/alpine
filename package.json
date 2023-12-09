@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/main.js",
-    "lint": "npx eslint src/*"
+    "lint": "npx eslint src/*",
+    "lint-fix": "npx eslint src/* --fix"
   },
   "repository": {
     "type": "git",
