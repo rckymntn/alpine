@@ -1,0 +1,13 @@
+version: "3"
+services:
+  alpine:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: alpine
+    env_file:
+      - .env
+    ulimits:
+      soft: -1
+      hard: -1
+    
