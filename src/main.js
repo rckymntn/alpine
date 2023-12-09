@@ -15,13 +15,27 @@ client.once(Discord.Events.ClientReady, (client) => {
     commandManager.set().then(commandManager.register());
 });
 
-client.on(Discord.Events.GuildMemberAdd, (added) => {
-    moderationManager.preemptiveKick(added);
-    moderationManager.preemptiveBan(added);
-})
 
+// Moderation 
+if (config.moderation) {
+    import("./ModerationManager.js").then(() => {
+        client.on(Discord.Events.GuildMemberAdd, (added) => {
+            if (moderationManager.isPreemptivelyBanned(added)) {
+                added.ban();
+            }
+        });
+        client.on(Discord.Events.MessageCreate, (message) => {
+            if (moderationManager.screen(message)) {
+                message.delete();
+            }
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
+// Commands
 client.on(Discord.Events.InteractionCreate, async (interaction) => {
-    console.log("new interaction")
     if (!interaction.isChatInputCommand()) {
         return;
     }
@@ -32,4 +46,4 @@ client.on(Discord.Events.InteractionCreate, async (interaction) => {
     await command.execute(interaction);
 })
 
-client.login(config.token);
+client.login(process.env.DISCORD_TOKEN);

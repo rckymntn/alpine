@@ -7,7 +7,7 @@ export default class CommandManager {
         this.client = client;
         this.commandsPath = "./src/commands/";
         this.commandFiles = fs.readdirSync(this.commandsPath).filter(file => file.endsWith(".js"));
-        this.rest = new Discord.REST().setToken(config.token);
+        this.rest = new Discord.REST().setToken(process.env.DISCORD_TOKEN);
 
     }
 
