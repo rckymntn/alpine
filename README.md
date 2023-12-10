@@ -1,8 +1,8 @@
-# Alpine Discord Bot
+# Discord Bot Foundation
 
 This is a intended to be a general-purpose foundation for a Discord bot. 
 
-## Included commands and other Features
+## Included commands and other features
 
 1. `/ping`: The most basic command. Responds with pong. 
 2. `/help`: Responds with some information about the bot and its usage. 

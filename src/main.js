@@ -1,5 +1,5 @@
 import Discord from "discord.js";
-import CommandManager from "./commandManager.js";
+import CommandManager from "./CommandManager.js";
 import ModerationManager from "./ModerationManager.js";
 import config from "../config.json" assert { type: "json" };
 
